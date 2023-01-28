@@ -29,7 +29,7 @@ $url_base = "http://localhost/sisnotas";
             <a class="nav-link" href="<?=$url_base?>/sistema/disciplina/disciplina-list.php">Disciplinas</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Notas</a>
+            <a class="nav-link" href="<?=$url_base?>/sistema/nota/nota-list.php">Notas</a>
           </li>
         </ul>
       </div>
