@@ -1,5 +1,8 @@
 <?php
 require __DIR__ . "\../../includes/topo.php"; 
+require __DIR__ . "\../../includes/conexao.php"; 
+
+$sql = "SELECT * FROM disciplina ORDER BY disnome";
 ?>
 <div class="card mt-3">
   <div class="card-header">
