@@ -12,7 +12,7 @@ require __DIR__ . "\includes/topo.php";
   </div>
 </div>
 
-      <?php
+<?php
 require __DIR__ . "\includes/fundo.php";
 ?>
 
