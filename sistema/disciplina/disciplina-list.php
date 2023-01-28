@@ -3,6 +3,7 @@ require __DIR__ . "\../../includes/topo.php";
 require __DIR__ . "\../../includes/conexao.php"; 
 
 $sql = "SELECT * FROM disciplina ORDER BY disnome";
+$listagem = $conn->query($sql);
 ?>
 <div class="card mt-3">
   <div class="card-header">
@@ -25,15 +26,19 @@ $sql = "SELECT * FROM disciplina ORDER BY disnome";
         </tr>
      </thead>
      <tbody>
+        <?php
+        while($linha = $listagem->fetch_assoc()) { //fetch_assoc() busca um elemento da variável listagem e joga em $linha
+        ?>
         <tr>
-        <th scope="row">1</th>
-            <td>Disciplina teste</td>
+        <th scope="row"><?=$linha['id']?></th>
+            <td><?= $linha['disnome']?></td>
             <td>
             <button type="button" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Editar"><i class="fa-sharp fa-solid fa-pen-to-square"></i></button>
 
             <button type="button" class="btn btn-danger" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Excluir" onclick="preExcluir(1, 'Disciplina teste')"><i class="fas fa-trash"></i></button>
             </td>     
         </tr>
+        <?php }?>
      </tbody>
     </table>
   </div>
