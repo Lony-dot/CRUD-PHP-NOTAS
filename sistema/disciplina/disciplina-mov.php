@@ -6,26 +6,26 @@
         //código de insersão.
         $sql = "INSERT INTO disciplina (disnome) VALUES ('".$_POST['disnome']."')";
 
-
-        if($conn->query($sql) === TRUE) {
-            //Executado com sucesso.
-            header("Location: $url_base/sistema/disciplina/disciplina-list.php?acao=insere&ret=1");
-        }
-        else {
-            //Executado com erro.
-            header("Location: $url_base/sistema/disciplina/disciplina-list.php?acao=insere&ret=2");
-        }
-
     }
     else if($_GET['acao'] == 'edita') {
-        //código de edição.
+        $sql = "UPDATE disciplina SET disnome = '".$_POST['disnome']."' WHERE id = " . $_POST['id'];
+    
+    }
+    else if($_GET['acao'] == 'deleta') {
+        $sql = "DELETE FROM disciplina WHERE id = " . $_POST['id'];
 
 
     }
-    else if($_GET['acao'] == 'deleta') {
-        //código de deleção.
 
-    } 
+    
+    if($conn->query($sql) === TRUE) {
+        //Executado com sucesso.
+        header("Location: $url_base/sistema/disciplina/disciplina-list.php?acao=".$_GET['acao']."&ret=1");
+    }
+    else {
+        //Executado com erro.
+        header("Location: $url_base/sistema/disciplina/disciplina-list.php?acao=".$_GET['acao']."&ret=2");
+    }
 
 
     require __DIR__ . "\../../includes/topo.php";  

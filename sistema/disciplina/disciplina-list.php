@@ -39,7 +39,8 @@ $listagem = $conn->query($sql);
             <td>
             <a href="<?=$url_base?>/sistema/disciplina/disciplina-form.php?id=<?=$linha['id']?>" type="button" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Editar"><i class="fa-sharp fa-solid fa-pen-to-square"></i></a>
 
-            <button type="button" class="btn btn-danger" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Excluir" onclick="preExcluir(1, 'Disciplina teste')"><i class="fas fa-trash"></i></button>
+            <button type="button" class="btn btn-danger" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Excluir" 
+            onclick="preExcluir(<?=$linha['id']?>, '<?=$linha['disnome']?>')"><i class="fas fa-trash"></i></button>
             </td>     
         </tr>
         <?php }?>
@@ -51,6 +52,7 @@ $listagem = $conn->query($sql);
 
 
 <!-- Modal -->
+<form method="post" action="<?=$url_base?>/sistema/disciplina/disciplina-mov.php?acao=deleta">
 <div class="modal fade" id="modalExcluir" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -61,13 +63,16 @@ $listagem = $conn->query($sql);
       <div class="modal-body">
         <p>Deseja realmente excluir o registro?</p>
         <p id="texto-excluir" class="text-primary"></p>
+
+        <input type="hidden" id="id" name="id">
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Excluir</button>
+        <button type="submit" class="btn btn-primary">Excluir</button>
       </div>
     </div>
   </div>
 </div>
+</form>
 
 <?php
 require __DIR__ . "\../../includes/fundo.php";
@@ -82,6 +87,7 @@ const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstra
 
     function preExcluir(id, disnome){
         $('#texto-excluir').html(disnome);
+        $('#id').val(id);
         $('#modalExcluir').modal('show');
     }
 </script>

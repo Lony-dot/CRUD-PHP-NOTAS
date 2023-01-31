@@ -30,6 +30,8 @@ else{
 ?>
 
 <form method="post" action="<?=$url_base?>/sistema/disciplina/disciplina-mov.php?acao=<?=$acao?>">
+<input type="hidden" id="id" name="id" value="<?=$id?>">
+
 <div class="card mt-3">
   <div class="card-header">
             <?=$label?>  Disciplina

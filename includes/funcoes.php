@@ -39,4 +39,5 @@ function trataRetorno($acao, $ret){
         
     }
 }
+
 ?>
