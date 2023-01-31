@@ -35,7 +35,7 @@ $listagem = $conn->query($sql);
         ?>
         <tr>
         <th scope="row"><?=$linha['id']?></th>
-            <td><?= $linha['disnome']?></td>
+            <td><?=$linha['disnome']?></td>
             <td>
             <a href="<?=$url_base?>/sistema/disciplina/disciplina-form.php?id=<?=$linha['id']?>" type="button" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Editar"><i class="fa-sharp fa-solid fa-pen-to-square"></i></a>
 
