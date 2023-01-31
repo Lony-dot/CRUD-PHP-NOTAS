@@ -2,21 +2,20 @@
 require __DIR__ . "\../../includes/topo.php"; 
 ?>
 
-<form action="">
+<form method="post" action="<?=$url_base?>/sistema/disciplina/disciplina-mov.php?acao=insere">
 <div class="card mt-3">
   <div class="card-header">
             Nova Disciplina
        </div>
-    <div class="card-body">
+  <div class="card-body">
     <label for="disnome" class="form-label">Nome da disciplina:</label>
     <input type="text" class="form-control" id="disnome" name="disnome">
   </div>
-  <div class="cardfooter">
+  <div class="card-footer">
     <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Salvar</button>
 
-    <a href="<?=$url_base?>/sistema/disciplina/disciplina-list.php" class="btn btn-danger"><i class="fas fa-window-close"></i> Cancelar</a>
-
-
+    <a href="<?=$url_base?>/sistema/disciplina/disciplina-list.php" class="btn btn-danger"><i class="fas fa-window-close">
+    </i> Cancelar</a>
   </div>
 </div>
 </form>

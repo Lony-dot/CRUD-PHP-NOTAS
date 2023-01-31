@@ -1,10 +1,14 @@
 <?php
 require __DIR__ . "\../../includes/topo.php"; 
 require __DIR__ . "\../../includes/conexao.php"; 
+require __DIR__ . "\../../includes/funcoes.php"; 
 
 $sql = "SELECT * FROM disciplina ORDER BY disnome";
 $listagem = $conn->query($sql);
 ?>
+
+<?php if(isset($_GET['acao'])) echo trataRetorno($_GET['acao'], $_GET['ret']);?>
+
 <div class="card mt-3">
   <div class="card-header">
     <div class="row">
