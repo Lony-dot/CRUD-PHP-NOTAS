@@ -16,7 +16,7 @@ $listagem = $conn->query($sql);
             Listagem de Disciplinas
       </div>
       <div class="col-6 text-end">
-      <a href="<?= $url_base?>/sistema/disciplina/disciplina-form.php" type="button" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Cadastrar" ><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      <a href="<?=$url_base?>/sistema/disciplina/disciplina-form.php" type="button" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Cadastrar" ><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
        </div>
       </div>
   </div>
@@ -37,7 +37,7 @@ $listagem = $conn->query($sql);
         <th scope="row"><?=$linha['id']?></th>
             <td><?= $linha['disnome']?></td>
             <td>
-            <button type="button" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Editar"><i class="fa-sharp fa-solid fa-pen-to-square"></i></button>
+            <a href="<?=$url_base?>/sistema/disciplina/disciplina-form.php?id=<?=$linha['id']?>" type="button" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Editar"><i class="fa-sharp fa-solid fa-pen-to-square"></i></a>
 
             <button type="button" class="btn btn-danger" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Excluir" onclick="preExcluir(1, 'Disciplina teste')"><i class="fas fa-trash"></i></button>
             </td>     

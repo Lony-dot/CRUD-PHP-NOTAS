@@ -1,11 +1,22 @@
 <?php
 require __DIR__ . "\../../includes/topo.php"; 
+
+//Edição
+if(isset($_GET['id'])){ // Se o GET['id'] existir, faça...
+  $label = 'Edita';
+}
+//Nova disciplina
+else{
+  $label = 'Nova';
+}
+
+
 ?>
 
 <form method="post" action="<?=$url_base?>/sistema/disciplina/disciplina-mov.php?acao=insere">
 <div class="card mt-3">
   <div class="card-header">
-            Nova Disciplina
+            <?=$label?>  Disciplina
        </div>
   <div class="card-body">
     <label for="disnome" class="form-label">Nome da disciplina:</label>

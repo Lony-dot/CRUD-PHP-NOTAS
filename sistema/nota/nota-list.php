@@ -2,13 +2,20 @@
 require __DIR__ . "\../../includes/topo.php"; 
 ?>
 
+
 <form>
 <div class="card mt-3">
   <div class="card-header">
-            Nova Nota
-  </div>
+  <div class="row">
+        <div class="col-6 mt-2">
+            Listagem de Notas
+      </div>
+      <div class="col-6 text-end">
+      <a href="<?=$url_base?>/sistema/disciplina/disciplina-form.php" type="button" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Cadastrar" ><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+       </div>
+      </div>
+  
     <div class="card-body">
-
         <div class="row">
           <div class="form-group col-md-4">
             <label for="iddisciplina">Disciplina:</label>
@@ -17,6 +24,7 @@ require __DIR__ . "\../../includes/topo.php";
                 <option value="">Disciplina Teste</option>
               </select>
           </div>
+          
 
           <div class="form-group col-md-4">
             <label for="notatividade">Atividade:</label>
@@ -44,3 +52,15 @@ require __DIR__ . "\../../includes/topo.php";
 require __DIR__ . "\../../includes/fundo.php";
 ?>
 
+<script>
+window.onload = function(){
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
+}
+
+    function preExcluir(id, disnome){
+        $('#texto-excluir').html(disnome);
+        $('#modalExcluir').modal('show');
+    }
+</script>

@@ -32,7 +32,7 @@ function trataRetorno($acao, $ret){
     }
     else{
         return '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-        <strong>SUCESSO!</strong> Erro ao'.$acao_str2.' registro com sucesso!
+        <strong>ERRO!</strong> Erro ao'.$acao_str2.' registro!
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>';
         

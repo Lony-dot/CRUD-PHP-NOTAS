@@ -4,7 +4,6 @@
 
     if($_GET['acao'] == 'insere') {
         //código de insersão.
-
         $sql = "INSERT INTO disciplina (disnome) VALUES ('".$_POST['disnome']."')";
 
 
