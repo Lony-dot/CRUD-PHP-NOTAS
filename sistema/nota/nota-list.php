@@ -1,5 +1,12 @@
 <?php
 require __DIR__ . "\../../includes/topo.php"; 
+require __DIR__ . "\../../includes/conexao.php"; 
+require __DIR__ . "\../../includes/funcoes.php"; 
+
+$sql = "SELECT n.*, d.disnome FROM nota n INNER JOIN disciplina d ON d.id = n.iddisciplina ORDER BY d.disnome, n.notatividade";
+$listagem = $conn->query($sql);
+print_r($sql);
+die;
 ?>
 
 
